@@ -18,7 +18,7 @@ This is the free, open-source edition of [Krypton.Bot](https://krypton.bot), cut
 ## Quick start
 
 ```bash
-git clone https://github.com/OWNER/krypton-bot-light.git && cd krypton-bot-light
+git clone https://github.com/krypton-bot/krypton-bot.git && cd krypton-bot
 npm install
 npm run dev
 ```
