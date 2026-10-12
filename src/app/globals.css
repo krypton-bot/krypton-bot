@@ -1,0 +1,319 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Tailwind v4 dropped the pointer default on buttons; restore it for every clickable control. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="menuitem"],
+  [role="tab"],
+  [role="option"],
+  summary,
+  select,
+  label[for],
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="range"] {
+    cursor: pointer;
+  }
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+/* Krypton brand: near-black surfaces, acid-green brand, teal long / rose short. */
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-long: var(--long);
+  --color-short: var(--short);
+  --color-surface: var(--surface);
+}
+
+.dark {
+  --background: oklch(0.13 0.005 260);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.17 0.006 260);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.19 0.006 260);
+  --primary: oklch(0.91 0.21 128);
+  --primary-foreground: oklch(0.18 0.03 128);
+  --secondary: oklch(0.22 0.006 260);
+  --muted: oklch(0.22 0.006 260);
+  --muted-foreground: oklch(0.68 0.01 260);
+  --accent: oklch(0.24 0.008 260);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.91 0.21 128 / 60%);
+  --sidebar: oklch(0.11 0.005 260);
+  --sidebar-primary: oklch(0.91 0.21 128);
+  --sidebar-primary-foreground: oklch(0.18 0.03 128);
+  --chart-1: oklch(0.91 0.21 128);
+  --chart-2: oklch(0.72 0.15 175);
+  --brand: oklch(0.91 0.21 128);
+  --brand-foreground: oklch(0.18 0.03 128);
+  --long: oklch(0.74 0.16 165);
+  --short: oklch(0.66 0.21 18);
+  --surface: oklch(0.155 0.006 260);
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* AI live overlay: the control the agent just "pressed" */
+@keyframes ai-flash {
+  0%, 100% { box-shadow: 0 0 0 0 transparent; }
+  30% { box-shadow: 0 0 0 3px var(--color-brand), 0 0 24px 4px color-mix(in oklch, var(--color-brand) 45%, transparent); }
+}
+.ai-flash { animation: ai-flash 0.9s ease-out 2; border-radius: 0.6rem; }
+@media (prefers-reduced-motion: reduce) { .ai-flash { animation: none; outline: 2px solid var(--color-brand); } }
+
+/* Logo entrance: plays once on every page load (never loops). Crystal spins in, each letter drops in with a bounce
+   and a green glow, then one shine sweeps across the word. */
+@keyframes logo-mark-in {
+  0% { opacity: 0; transform: translateY(-24px) rotate(-320deg) scale(0.2); }
+  55% { opacity: 1; transform: translateY(3px) rotate(18deg) scale(1.25); filter: drop-shadow(0 0 14px var(--color-brand)); }
+  75% { transform: rotate(-6deg) scale(0.95); }
+  100% { transform: none; filter: drop-shadow(0 0 0 transparent); }
+}
+@keyframes logo-letter-in {
+  0% { opacity: 0; transform: translateY(-1.1em) scale(1.6) rotate(-12deg); filter: blur(8px); text-shadow: 0 0 0 transparent; }
+  55% { opacity: 1; transform: translateY(0.12em) scale(0.92) rotate(3deg); filter: blur(0); text-shadow: 0 0 18px var(--color-brand); }
+  75% { transform: translateY(-0.05em) scale(1.04); }
+  100% { opacity: 1; transform: none; text-shadow: 0 0 0 transparent; }
+}
+@keyframes logo-shine {
+  0% { background-position: 150% 0; opacity: 1; }
+  99% { background-position: -50% 0; opacity: 1; }
+  100% { background-position: -50% 0; opacity: 0; }
+}
+.logo-word { perspective: 400px; }
+.logo-mark { animation: logo-mark-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.logo-letter {
+  animation: logo-letter-in 0.7s cubic-bezier(0.22, 1.2, 0.36, 1) both;
+  animation-delay: calc(0.3s + var(--i) * 90ms);
+}
+.logo-word::after {
+  /* Shine clipped to the glyphs (same text, transparent fill), so no box shows before or after. */
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: transparent;
+  background: linear-gradient(100deg, transparent 40%, rgb(255 255 255 / 0.9) 50%, transparent 60%) no-repeat;
+  background-size: 250% 100%;
+  background-position: 150% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  opacity: 0;
+  animation: logo-shine 0.8s ease-in-out 1.45s 1 both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark, .logo-letter, .logo-word::after { animation: none !important; }
+}
+
+/* Krypton Bot face: eyes look around and blink; busy = faster scan + glow. */
+@keyframes bot-look {
+  0%, 18% { transform: translateX(0); }
+  24%, 42% { transform: translateX(-2.2px); }
+  48%, 66% { transform: translateX(2.2px); }
+  72%, 100% { transform: translateX(0); }
+}
+@keyframes bot-blink {
+  0%, 84%, 90%, 94%, 100% { transform: scaleY(1); }
+  87%, 97% { transform: scaleY(0.08); }
+}
+@keyframes bot-glow {
+  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
+  50% { filter: drop-shadow(0 0 6px var(--color-brand)); }
+}
+.bot-face .bot-eye { transform-box: fill-box; transform-origin: center; }
+.bot-animated .bot-eyes { animation: bot-look 5s ease-in-out infinite; }
+.bot-animated .bot-eye { animation: bot-blink 3.4s ease-in-out infinite; }
+.bot-active .bot-eyes { animation-duration: 1.6s; }
+.bot-active { animation: bot-glow 1.6s ease-in-out infinite; }
+@keyframes bot-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.bot-bob { animation: bot-bob 3.2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .bot-animated .bot-eyes, .bot-animated .bot-eye, .bot-active, .bot-bob { animation: none !important; }
+}
+
+/* Stats strip ticker (mobile): content moves right; two copies make the loop seamless. */
+@keyframes ticker-right {
+  from { transform: translateX(calc(-50% - 0.75rem)); }
+  to { transform: translateX(0); }
+}
+
+/* Keep the page end (footer) clear of the fixed mobile Trade / Krypton Bot bar. */
+@media (width < 64rem) {
+  body:has(.mobile-action-bar) { padding-bottom: 8.5rem; }
+}
+
+/* On brand-coloured surfaces (lime buttons) the lime mark would vanish: white crystal (owner pick C),
+   same facets and dark eyes, sized above the label like the wordmark logo. */
+.bg-brand .bot-face {
+  width: 1.625rem;
+  height: 1.625rem;
+  flex-shrink: 0;
+  shape-rendering: geometricPrecision;
+}
+.bg-brand .bot-face .bot-body { fill: #fff; }
+.bg-brand .bot-face .bot-eye { fill: #0a0c08; }
+
+/* Krypton Bot reactor: rotating energy rings, orbiting agent nodes and beams (transform/opacity only). */
+@keyframes reactor-spin { to { transform: rotate(360deg); } }
+@keyframes reactor-spin-rev { to { transform: rotate(-360deg); } }
+@keyframes reactor-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+@keyframes reactor-beam { to { stroke-dashoffset: -24; } }
+@keyframes reactor-node-on {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--node, var(--color-brand)) 60%, transparent); }
+  50% { box-shadow: 0 0 18px 2px color-mix(in oklch, var(--node, var(--color-brand)) 70%, transparent); }
+}
+@keyframes reactor-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.reactor-ring { transform-origin: 50% 50%; transform-box: view-box; }
+.reactor-spin-a { animation: reactor-spin 9s linear infinite; }
+.reactor-spin-b { animation: reactor-spin-rev 14s linear infinite; }
+.reactor-spin-c { animation: reactor-spin 22s linear infinite; }
+.reactor-fast .reactor-spin-a { animation-duration: 3.5s; }
+.reactor-fast .reactor-spin-b { animation-duration: 6s; }
+.reactor-fast .reactor-spin-c { animation-duration: 10s; }
+.reactor-core { animation: reactor-pulse 2.4s ease-in-out infinite; transform-origin: center; }
+.reactor-beam { stroke-dasharray: 4 8; animation: reactor-beam 0.6s linear infinite; }
+.reactor-node-on { animation: reactor-node-on 1.2s ease-in-out infinite; }
+.reactor-progress { transform-origin: left; animation: reactor-progress var(--dur, 3s) cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .reactor-spin-a, .reactor-spin-b, .reactor-spin-c, .reactor-core, .reactor-beam, .reactor-node-on { animation: none !important; }
+}
+/* Home first-visit intro: hero hidden before first paint (inline script), revealed by HeroIntro or after 6s anyway. */
+@keyframes kb-reveal { to { opacity: 1; } }
+[data-kb-intro] .hero-intro-content { opacity: 0; animation: kb-reveal 0.4s ease 6s forwards; }

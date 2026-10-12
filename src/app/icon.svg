@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <path d="M20 1 39 20 20 39 1 20Z" fill="#c6f432"/>
+  <path d="M20 1 39 20H1Z" fill="#fff" opacity=".28"/>
+  <path d="M20 20h19L20 39Z" fill="#000" opacity=".18"/>
+  <rect x="12.5" y="17" width="4" height="6" rx="1" fill="#0a0c08"/>
+  <rect x="23.5" y="17" width="4" height="6" rx="1" fill="#0a0c08"/>
+</svg>
