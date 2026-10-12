@@ -15,6 +15,19 @@
 
 This is the free, open-source edition of [Krypton.Bot](https://krypton.bot), cut down to do one thing well: copy trading.
 
+> ### Want the full AI trading bot? Try [Krypton.Bot Cloud](https://krypton.bot)
+>
+> Everything in Light, plus:
+>
+> - **Krypton Bot AI agent.** Ask in plain words. It researches news, X, order books and smart money, then trades for you.
+> - **Autopilot and Decision Maker.** It runs 24/7, scores every call 24 hours later and learns from the results.
+> - **AI trader picks.** A copy score for every trader, and a size fitted to your balance.
+> - **Prediction markets and perps**, not just copy trading.
+> - **Always on.** It keeps copying while your laptop is closed. Nothing to install.
+> - **MCP server and analytics.** Connect Claude or Cursor, and track your P/L, win rate and bot accuracy.
+>
+> **[Start free in paper mode at krypton.bot](https://krypton.bot/register)**. No card needed. Upgrade to Pro for live trading and the AI.
+
 ## Quick start
 
 ```bash
