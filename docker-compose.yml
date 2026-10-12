@@ -1,0 +1,18 @@
+# docker compose up --build   ->  http://localhost:3000
+services:
+  app:
+    build: .
+    ports:
+      # Localhost only. The app has no login, so do not publish it on a public interface.
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - kbl-data:/data
+    environment:
+      # Optional live trading and alerts; see .env.example. Leave empty to stay in paper mode.
+      POLYMARKET_PRIVATE_KEY: ${POLYMARKET_PRIVATE_KEY:-}
+      POLYMARKET_FUNDER: ${POLYMARKET_FUNDER:-}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+    restart: unless-stopped
+
+volumes:
+  kbl-data:
